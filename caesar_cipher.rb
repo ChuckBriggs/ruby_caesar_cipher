@@ -1,13 +1,15 @@
 # caesar_cipher.rb
-#require 'pry'; binding.pry
+#require 'pry'; binding.pry # pry break point
 
 def apply_cipher(val, n)
+	# if lower case, apply cipher and loop around if necessary
 	if val > 96 && val < 123
 		val += n
 		if val > 122
 			val -= 26
 		end
 		return val
+	# if upper case, apply cipher and loop around if necessary
 	elsif val > 64 && val < 91
 		val += n
 		if val > 90
@@ -15,14 +17,17 @@ def apply_cipher(val, n)
 		end
 		return val
 	end
+	# if not caught by upper or lower case filters, return unaltered
 	return val
 end
 
 def convert_alpha_to_num(alpha_array)
+# gets array of chars, returns array of corresponding ord integers
 	return alpha_array.map { |char| char.ord }
 end
 
 def convert_num_to_alpha(num_array)
+# gets array of ord ints, returns array of corresponding chars
 	return num_array.map { |val| val.chr }
 end
 
