@@ -35,15 +35,6 @@ def caesar_cipher(message, cipher)
 	num_array = convert_alpha_to_num(message.split(""))
 	num_array.map! { |char| char = apply_cipher(char, cipher) }
 	return convert_num_to_alpha(num_array).join
-
-##	orig_alpha_array = message.split("")
-##	orig_num_array = convert_from_alpha_to_num(orig_alpha_array)
-#	num_array = convert_alpha_to_num(message.split(""))
-#
-#	coded_num_array = num_array.map { |char| char = apply_cipher(char, cipher) }
-#	coded_alpha_array = convert_num_to_alpha(coded_num_array)
-#
-#	return coded_alpha_array.join
 end
 
 puts "Enter your message to encode: "
